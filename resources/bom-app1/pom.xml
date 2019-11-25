@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.samir.enterprise</groupId>
+		<artifactId>bom-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<groupId>com.samir.enterprise</groupId>
+	<artifactId>bom-app1</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>Enterprise Child BOM</name>
+
+	<!-- notice none of the dependencies here have scope defined -->
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>	
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>			<!-- ALERT: Notice that I have to redeclare the version again. -->
+				<scope>provided</scope>				
+			</dependency>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>${javaee-api.version}</version>	<!-- ALERT: Notice that I have to redeclare the version and exclusions again -->
+				<scope>provided</scope>
+				<!--exclusions>
+					<exclusion>
+						<groupId>*</groupId>
+						<artifactId>*</artifactId>
+					</exclusion>
+				</exclusions-->
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
