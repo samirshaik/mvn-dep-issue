@@ -93,3 +93,6 @@ Below is sample snippet of the child BOM, which should let me define the scope o
 [INFO] +- javax:javaee-api:jar:7.0:provided
 [INFO] \- junit:junit:jar:4.4:test
 ```
+
+
+Stackoverflow : https://stackoverflow.com/questions/59013845/maven-dependencymangement-doesnt-inherit-the-virtue-of-dependencies-in-the-pare
